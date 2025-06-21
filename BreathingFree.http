@@ -1,0 +1,24 @@
+@BreathingFree_HostAddress = http://localhost:5050
+
+### LOGIN
+POST {{BreathingFree_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "hellotan123@example.com",
+  "password": "12345678@aNX"
+}
+###
+
+### REGISTER
+POST {{BreathingFree_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "fullname": "Hello ADM ",
+  "email": "hellotan123@example.com",
+  "password": "12345678@aNX",
+  "gender": "Male",
+  "dob": "2000-03-12"
+}
+###

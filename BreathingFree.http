@@ -1,5 +1,5 @@
 @BreathingFree_HostAddress = http://localhost:5050
-
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxMiIsImVtYWlsIjoiaGVsbG90YW4xMjNAZXhhbXBsZS5jb20iLCJyb2xlIjoiMSIsIm5iZiI6MTc1MDYxMDA2OSwiZXhwIjoxNzUxMjE0ODY5LCJpYXQiOjE3NTA2MTAwNjl9.HhYRAycngSgNemICtBXs0vWocnZimxFZXStruPMQA04
 ### LOGIN
 POST {{BreathingFree_HostAddress}}/api/auth/login
 Content-Type: application/json
@@ -22,3 +22,25 @@ Content-Type: application/json
   "dob": "2000-03-12"
 }
 ###
+
+### Send Support Message
+POST {{BreathingFree_HostAddress}}/api/support/send
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "staffId": 1,
+    "content": "Tôi c?n h? tr? v? vi?c s? d?ng ?ng d?ng"
+}
+
+### Get Conversation
+GET {{BreathingFree_HostAddress}}/api/support/conversation/1
+Authorization: Bearer {{token}}
+
+### Get Unread Messages
+GET {{BreathingFree_HostAddress}}/api/support/unread
+Authorization: Bearer {{token}}
+
+### Mark Message as Read
+PUT {{BreathingFree_HostAddress}}/api/support/read/1
+Authorization: Bearer {{token}}

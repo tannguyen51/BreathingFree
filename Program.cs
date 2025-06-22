@@ -40,7 +40,8 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod();
     });
 });
-
+// Message service
+builder.Services.AddScoped<SupportService>();
 // 3️⃣ Add controller và swagger
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
